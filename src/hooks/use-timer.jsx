@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react"
 import useSound from "use-sound"
-const sound = require( "../assets/alarmSound.mp3")
+import beep from "../assets/beep.wav"
 
 
 const useTimer = (input) => {
     const [totalTime, setTotalTime] = useState(input)
+  
     
 
     
-        const audio = new Audio(sound)
-        audio.muted = true;
+        const audio = new Audio(beep)
+        
    let audioplay = () => audio.play()
   
     useEffect(() => {

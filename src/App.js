@@ -1,18 +1,15 @@
 import "./App.css";
-import CookingAlarm from "./components/CookingAlarm";
+
+import { useState } from "react";
+import TimerSelector from "./layout/TimerSelector";
+import DisplayTimers from "./layout/DisplayTimers";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CookingAlarm />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
+        <TimerSelector />
+        <DisplayTimers />
       </header>
     </div>
   );
