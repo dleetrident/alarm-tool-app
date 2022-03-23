@@ -1,17 +1,19 @@
 import "./App.css";
 
-import { useState } from "react";
-import TimerSelector from "./layout/TimerSelector";
-import DisplayTimers from "./layout/DisplayTimers";
+import TimerContainer from "./components/TimerContainer";
+import TimerProvider from "./store/TimerProvider";
+import NewTimerForm from "./components/inputTimer/NewTimerForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <TimerSelector />
-        <DisplayTimers />
-      </header>
-    </div>
+    <TimerProvider>
+      <div className="App">
+        <header className="App-header">
+          <NewTimerForm />
+          <TimerContainer timeSet="20" />
+        </header>
+      </div>
+    </TimerProvider>
   );
 }
 
