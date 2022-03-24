@@ -1,4 +1,5 @@
 import useTimer from "../hooks/use-timer"
+import Card from "../UI/Card"
 
 
 
@@ -14,12 +15,12 @@ const CookingTimer = (props) => {
  
     
 
-    return (<div>
+    return (<Card>
         <h3>{props.nameSet}</h3>
         <h4>{props.typeSet}</h4>
         <p>{hours} : {minutes} : {secs}</p>
         <button onClick={() => { return props.delete(props.id) }}>Delete</button>
-</div>)
+</Card>)
 }
 
 export default CookingTimer
