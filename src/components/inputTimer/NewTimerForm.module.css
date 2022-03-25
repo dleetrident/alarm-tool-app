@@ -1,5 +1,5 @@
 .form {
-  padding: 2% 40%;
+  padding: 2%;
 }
 
 .form label {
@@ -10,7 +10,7 @@
 }
 
 .form button {
-  margin: 2% auto 4%;
+  margin: 2% 2% 4%;
 
   position: relative;
 }

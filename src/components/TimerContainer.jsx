@@ -4,6 +4,8 @@ import CookingTimer from "./CookingTimer";
 
 
 
+
+
 function TimerContainer(props) {
       const timerCtx = useContext(TimerContext)
   const { timerList, deleteTimer } = timerCtx
@@ -11,9 +13,9 @@ function TimerContainer(props) {
   
     return deleteTimer(id)
   }
-  return (<div>
+  return (<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr' }}> 
     
-      {timerList.map((item) => <CookingTimer key={item.id} id={item.id} nameSet={item.name} typeSet={item.type} timeSet={item.time} delete={deleteTimerHandler}/>)}
+      {timerList.map((item) => <div ><CookingTimer key={item.id} id={item.id} nameSet={item.name} typeSet={item.type} timeSet={item.time} delete={deleteTimerHandler}/></div>)}
         
     </div>)
 }
