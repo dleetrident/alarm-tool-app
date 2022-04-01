@@ -1,10 +1,13 @@
 import TimerContext from "./timer-context";
-import {useReducer} from "react"
+import { useEffect, useReducer } from "react"
+import { toast } from "react-toastify";
+import useTimer from "../hooks/use-timer";
 
 const defaultTimerState = {
   timerList: [],
  
 }
+
 const timerReducer = (state, action) => {
     let updatedTimers;
     if (action.type === "ADD") {
@@ -18,14 +21,12 @@ const timerReducer = (state, action) => {
         return {timerList: updatedTimers}
     }
     if (action.type === "REMOVE") {
-           
-    
-    console.log(action.id)
-    
+               
         updatedTimers = state.timerList.filter((item) => item.id !== action.id);
-        console.log(updatedTimers)
         return {timerList: updatedTimers}
     }
+
+
     
     return defaultTimerState
 }
@@ -39,10 +40,18 @@ const [timerState,dispatchTimerAction] = useReducer(timerReducer,defaultTimerSta
     const deleteTimer = (id) => {
 dispatchTimerAction({type: "REMOVE",id: id})
     }
+
+
+
+
+
+
+
     const timerContext = {
   timerList: timerState.timerList,
     addTimer: addTimer,
-    deleteTimer: deleteTimer,
+        deleteTimer: deleteTimer,
+
     }
     return (<TimerContext.Provider value={timerContext} >
         {props.children}

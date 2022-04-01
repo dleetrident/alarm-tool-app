@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react"
-import useSound from "use-sound"
-import beep from "../assets/beep.wav"
+import { toast } from "react-toastify"
+
+import beep from "../assets/AlarmSound.wav"
 
 
-const useTimer = (input) => {
-    const [totalTime, setTotalTime] = useState(input)
+
+const useTimer = (inputTime) => {
+
+    const [totalTime, setTotalTime] = useState(inputTime)
   
     
 
@@ -12,28 +15,28 @@ const useTimer = (input) => {
         const audio = new Audio(beep)
         
    let audioplay = () => audio.play()
-  
+
     useEffect(() => {
         if (totalTime > 0) {
-               const interval = setInterval(() => {
-            setTotalTime((prevCounter) => prevCounter - 1);  
-               }, 1000);
+            const interval = setInterval(() => {
+                setTotalTime((prevCounter) => prevCounter - 1);
+                
+            }, 1000);
+          
             return () => clearInterval(interval)
         } else {
+         toast("🔔Alarm Is Ringing!🔔", {
+position: "top-left",
+});
             audioplay()
-        }
- 
-    }, [totalTime]);
+            }
+        }, [totalTime,audioplay]);
     
     
       let hours = Math.floor(totalTime / 3600)
     let minutes = Math.floor((totalTime % 3600) / 60)
     let secs = totalTime % 60
-    return {
-        hours,
-        minutes,
-        secs,
-    }
+    return {hours,minutes,secs}
 }
 
 export default useTimer

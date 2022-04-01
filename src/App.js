@@ -2,11 +2,13 @@ import "./App.css";
 
 import TimerContainer from "./components/TimerContainer";
 import TimerProvider from "./store/TimerProvider";
-import CardLg from "./UI/CardLg";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import TimerContext from "./store/timer-context";
 import InputTimerSection from "./components/inputTimer/InputTimerSection";
 import Header from "./layout/Header";
+import MainContainer from "./layout/MainContainer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const timerCtx = useContext(TimerContext);
@@ -14,10 +16,11 @@ function App() {
   return (
     <TimerProvider>
       <Header />
-      <CardLg>
+      <MainContainer>
         <InputTimerSection />
-      </CardLg>
-      <TimerContainer />
+        <TimerContainer />
+      </MainContainer>
+      <ToastContainer />
     </TimerProvider>
   );
 }

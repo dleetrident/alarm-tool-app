@@ -14,3 +14,7 @@
 
   position: relative;
 }
+
+.form-error {
+  color: red;
+}
