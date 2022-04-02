@@ -1,17 +1,15 @@
-import React from "react"
-import CardLg from "../../UI/CardLg"
-import NewTimerForm from "./NewTimerForm"
-import PresetTimerButtons from "./PresetTimerButtons"
+import React from "react";
+import CardLg from "../../UI/CardLg";
+import NewTimerForm from "./NewTimerForm";
 
-import classes from "./InputTimerSection.module.css"
+import classes from "./InputTimerSection.module.css";
 
 const InputTimerSection = () => {
-    return <CardLg className={classes.card}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-        <NewTimerForm />
-        <PresetTimerButtons />
-        </div>
+  return (
+    <CardLg className={classes.card}>
+      <NewTimerForm />
     </CardLg>
-}
+  );
+};
 
-export default InputTimerSection
+export default InputTimerSection;

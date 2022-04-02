@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
-import classes from "./MainContainer.module.css"
+import classes from "./MainContainer.module.css";
 
 const MainContainer = (props) => {
-    return <section className={classes.main}>{props.children}</section>
-}
+  return <section className={classes.main}>{props.children}</section>;
+};
 
-export default MainContainer
+export default MainContainer;

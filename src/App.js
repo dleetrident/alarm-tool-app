@@ -2,7 +2,7 @@ import "./App.css";
 
 import TimerContainer from "./components/TimerContainer";
 import TimerProvider from "./store/TimerProvider";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import TimerContext from "./store/timer-context";
 import InputTimerSection from "./components/inputTimer/InputTimerSection";
 import Header from "./layout/Header";

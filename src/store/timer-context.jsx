@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
 const TimerContext = React.createContext({
-    timerList: [],
-    addTimer: (timerObj) => {},
-    deleteTimer: (id) => { },
-})
+  timerList: [],
+  addTimer: (timerObj) => {},
+  deleteTimer: (id) => {},
+});
 
-export default TimerContext
+export default TimerContext;
